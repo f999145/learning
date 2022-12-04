@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-name = 'THE CALLISTO PROTOCOL 02'
+name = 'THE CALLISTO PROTOCOL 03'
 
 path = os.path.join('a:\\', 'youtube')
 
@@ -11,11 +11,11 @@ vdict = {'res': 'webm', 'video_id': 3, 'audio_id': 21}
 args =[
     'ffmpeg', '-y', 
     
-    '-ss', '01:00:00', # '-to', '02:00:00', # вырезать фрагмент видео
+    # '-ss', '01:00:00', # '-to', '02:00:00', # вырезать фрагмент видео
     
     '-i', (os.path.join(path, name + "." + vdict['res'])),
         
-    '-vf', 'scale=-1:1440', # Specify the Height To Retain the Aspect Ratio
+    '-vf', 'scale=-1:1080', # Specify the Height To Retain the Aspect Ratio
                             # https://ottverse.com/change-resolution-resize-scale-video-using-ffmpeg/
     
     # '-r', '24',             # frame rate
