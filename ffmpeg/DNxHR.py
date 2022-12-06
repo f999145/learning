@@ -52,5 +52,5 @@ args =[
     
     os.path.join(path, name +' output'+".mov")
 ]
-# print(' '.join(args))
-subprocess.run(args, shell=True, check=True)
+print(' '.join(args))
+# subprocess.run(args, shell=True, check=True)

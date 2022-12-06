@@ -2,7 +2,7 @@ import os
 from pytube import YouTube
 import subprocess
 
-link = 'https://youtu.be/uhxiXOTKzfs'
+link = 'https://youtu.be/ZfN8nG0luig'
 
 name = 'THE TEST'
 
@@ -11,6 +11,7 @@ resolution="2160"
 path = os.path.join('a:\\', 'youtube')
 
 def connect_to_stream():
+    print()
     print('connect to stream...', end='')
     yt = YouTube(link,
                 # use_oauth=True
