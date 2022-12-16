@@ -2,14 +2,14 @@ import os
 from pytube import YouTube
 import subprocess
 
-link = 'https://youtu.be/ZfN8nG0luig'
+link = 'https://youtu.be/6Nval_I6q1s'
 
-name = 'THE TEST'
+name = 'ВЕДЬМАК 3 part 01'
 
 resolution="2160"
 
-# path = os.path.join('a//', 'youtube')
-path = os.path.join('/mnt/test/', 'youtube')
+path = os.path.join('a:\\', 'youtube')
+# path = os.path.join('/mnt/test/', 'youtube')
 
 def connect_to_stream():
     print()
