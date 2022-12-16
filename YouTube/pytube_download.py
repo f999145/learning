@@ -8,7 +8,7 @@ name = 'THE TEST'
 
 resolution="2160"
 
-path = os.path.join('a:\\', 'youtube')
+path = os.path.join('./', 'youtube')
 
 def connect_to_stream():
     print()
