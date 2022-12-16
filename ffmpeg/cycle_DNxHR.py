@@ -1,19 +1,18 @@
 import os
 import subprocess
 
-name = 'THE CALLISTO PROTOCOL 03'
+path = os.path.join('/','mnt', 'test', 'youtube') 
 
-path = os.path.join('a:\\', 'youtube')
-
-vdict = {'res': 'webm', 'video_id': 3, 'audio_id': 21}
-
-# Кодирование в Avid DNxHR
 args =[
+
+    # 'mkdir', os.path.join(path, 'outputs'),
+    'for', '%%a', 'in', '("*.webm")', 'do',
+
     'ffmpeg', '-y', 
     
     # '-ss', '01:00:00', # '-to', '02:00:00', # вырезать фрагмент видео
     
-    '-i', (os.path.join(path, name + "." + vdict['res'])),
+    '-i', '"%%a"',
         
     '-vf', 'scale=-1:1080', # Specify the Height To Retain the Aspect Ratio
                             # https://ottverse.com/change-resolution-resize-scale-video-using-ffmpeg/
@@ -50,7 +49,12 @@ args =[
     # '-reset_timestamps', '1',
     # '"' + os.path.join(path, name +' output%03d'+".mov") + '"'
     
-    os.path.join(path, name +' output'+".mov")
+    os.path.join(path, 'outputs', '%%~na.mov')
 ]
-print(' '.join(args))
-# subprocess.run(args, shell=True, check=True)
+# print(' '.join(args))
+subprocess.run(args, shell=True, check=True)
+
+
+# mkdir outputs
+# for %%a in ("*.webm") do ffmpeg -y -i "%%a" -vf scale=-1:1080 -c:v dnxhd -profile:v dnxhr_lb -c:a aac -b:a 192k -alpha_bits 0 "outputs\%%~na.mov"
+# pause
