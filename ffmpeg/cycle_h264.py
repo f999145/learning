@@ -21,7 +21,7 @@ for file in files[:1]:
     args =[
         'ffmpeg', '-y',
         
-        '-ss', '00:05:00', '-to', '00:20:00', # вырезать фрагмент видео
+        # '-ss', '00:05:00', '-to', '00:20:00', # вырезать фрагмент видео
         
         '-i', file,
             
@@ -31,9 +31,9 @@ for file in files[:1]:
         # '-r', '24',             # frame rate
         
         '-c:v', 'h264_nvenc',
-        '-b:v', '40M',
-        '-minrate', '39M',
-        '-maxrate', '40M',
+        '-b:v', '30M',
+        '-minrate', '28M',
+        '-maxrate', '30M',
         '-bufsize', '2M',
        
         '-c:a', 'aac', '-b:a', '192k', # кодирование аудио
