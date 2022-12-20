@@ -2,9 +2,9 @@ import os
 from pytube import YouTube
 import subprocess
 
-link = 'https://youtu.be/6Nval_I6q1s'
+link = 'https://youtu.be/YABYpgVwE7A'
 
-name = 'ВЕДЬМАК 3 part 01'
+name = 'ВЕДЬМАК 3 part 02'
 
 resolution="2160"
 
@@ -83,6 +83,7 @@ def create_video_dict():
         print('Нет данных')
     print()
 
+@spent_time
 def load_yt_files():
     if videos:
         print('download video...')
@@ -118,7 +119,28 @@ def delete_tmp():
         os.remove(os.path.join(path, "_video." + vdict['res']))
         os.remove(os.path.join(path, "_audio." + vdict['res']))
         print('remove tmp files')
-        
+
+def spent_time(func):
+    """ Декорирующая функция
+        Считает время затрачиваемое функцией на выполнение
+    """
+    def wrapper():
+        start = time.time()
+        func()
+        end = time.time()
+        total = int(round(((end - start) * 1000), 0))
+        print()
+        if total < 1000:
+            print(f'function "{func.__name__}" take: {total} ms')
+        elif (total//1000) < 60:
+            print(f'function "{func.__name__}" take: {total//1000:02d}:{total%1000:03d} sec')
+        elif ((total//1000)//60) < 60:
+            print(f'function "{func.__name__}" take: {(total//1000)//60:02d}:{(total//1000)%60:02d} min')
+        else:
+            print(f'function "{func.__name__}" take: {((total//1000)//60)//60}:{((total//1000)//60)%60:02d} h')
+        print('-' * 20)
+    return wrapper
+
 if __name__ == '__main__':
     videos = connect_to_stream()
     vdict = create_video_dict()
