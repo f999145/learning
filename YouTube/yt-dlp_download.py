@@ -4,7 +4,7 @@ from textwrap import shorten
 import subprocess
 
 link = '''
-https://rt.pornhub.com/view_video.php?viewkey=ph5d28f346e0531
+https://rt.pornhub.com/view_video.php?viewkey=1034877893
 '''.strip()
 
 resolution="720"
