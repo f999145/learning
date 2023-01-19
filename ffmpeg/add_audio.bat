@@ -1,0 +1,1 @@
+ffmpeg -i "How to install mysql and phpmyadmin.webm" -i audio.mp3 -map 0 -map 1:a -c:v copy -shortest output.webm
