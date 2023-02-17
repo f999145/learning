@@ -1,0 +1,2 @@
+$ youtube-dl 
+--add-header Accept-Encoding:"identity;q=1, *;q=0" --add-header Range:"bytes=6488064-" --add-header Referer:"https://avideosite.net/video/0123456" --add-header User-Agent:"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36" http://11.22.333.444:8280/abcdefg=.mp4?st=97WbFiADB5Hla7Y-fZx58g&e=1560574126
