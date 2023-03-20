@@ -4,7 +4,9 @@ from textwrap import shorten
 import subprocess
 
 link = '''
-https://youtu.be/PveSwofCBic?list=PL05SB3rBbUsprkMgH3yDV12MuuIbO5KEq
+
+https://youtu.be/9fSUXPSUT2Y
+
 '''.strip()
 
 resolution="2160"
