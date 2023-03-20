@@ -4,10 +4,10 @@ from textwrap import shorten
 import subprocess
 
 link = '''
-https://www.youtube.com/watch?v=Cmdrb420NNw
+https://youtu.be/PveSwofCBic?list=PL05SB3rBbUsprkMgH3yDV12MuuIbO5KEq
 '''.strip()
 
-resolution="720"
+resolution="2160"
 
 path = os.path.join('a:\\', 'youtube')
 
