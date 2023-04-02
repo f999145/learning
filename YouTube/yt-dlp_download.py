@@ -5,13 +5,13 @@ import subprocess
 
 link = '''
 
-https://www.youtube.com/watch?v=xYq_FPeo84E
+https://www.youtube.com/watch?v=hF66c3Xq_IM
 
 '''.strip()
 
-resolution="2160"
+resolution="1080"
 
-path = os.path.join('a:\\', 'youtube')
+path = os.path.join('c:\\', 'youtube')
 
 if ('youtu' in link.split('/', maxsplit=3)[-2]):
     yt = YouTube(link,
