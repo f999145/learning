@@ -5,11 +5,11 @@ import subprocess
 
 link = '''
 
-https://www.youtube.com/watch?v=hF66c3Xq_IM
+https://youtu.be/RRLE68VWkdM
 
 '''.strip()
 
-resolution="1080"
+resolution="720"
 
 path = os.path.join('c:\\', 'youtube')
 
