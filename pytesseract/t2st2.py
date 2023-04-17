@@ -36,6 +36,8 @@ def get_live():
     mana_queue.put('4')
     mana_queue.put('5')
     
+    count = 0
+    print(f'{count:04d}', end='\r')
     while True:
         time.sleep(0.5)
         image_live = ImageGrab.grab(bbox=(live_left, live_upper, live_right, live_lower))
@@ -56,7 +58,8 @@ def get_live():
                 item = vilaliti.get()
                 # pyautogui.press(item)
                 pyautogui.hotkey(item)
-                # print('сработало')
+                count += 1
+                print(f'{count:04d}', end='\r')
                 
                 vilaliti.put(item)
                 time.sleep(1)
