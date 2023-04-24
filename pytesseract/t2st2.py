@@ -32,9 +32,9 @@ def get_live():
     vilaliti.put('3')
     vilaliti.put('4')
     
-    mana_queue = Queue()
-    mana_queue.put('4')
-    mana_queue.put('5')
+    # mana_queue = Queue()
+    # mana_queue.put('4')
+    # mana_queue.put('5')
     
     count = 0
     print(f'{count:04d}', end='\r')
@@ -59,7 +59,7 @@ def get_live():
                 # pyautogui.press(item)
                 pyautogui.hotkey(item)
                 count += 1
-                print(f'{count:04d}', end='\r')
+                print(f'{curr_live:05d}__{count:04d}', end='\r')
                 
                 vilaliti.put(item)
                 time.sleep(1)
