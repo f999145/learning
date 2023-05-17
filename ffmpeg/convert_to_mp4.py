@@ -54,8 +54,8 @@ args = [
     '-preset', 'fast',
     '-profile:v', 'main',
     '-level', '4.2',
-    '-cbr', 'True',
-    '-b:v', '8M',
+    '-cbr', 'False',
+    '-b:v', '6M',
     
     '-c:a', 'ac3',
     '-af', "pan=stereo|FL < 0.7*FC + 0.3*FLC + 0.3*FL + 0.3*BL + 0.3*SL + 0.5*LFE | FR < 0.7*FC + 0.3*FRC + 0.3*FR + 0.3*BR + 0.3*SR + 0.5*LFE",
