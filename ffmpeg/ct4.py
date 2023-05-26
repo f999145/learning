@@ -45,9 +45,9 @@ args = [
     'ffmpeg', '-y',
     '-i', video,
     
-    '-map', '0:v',
-    '-map', '0:a',
-    '-map', '0:s',
+    '-map', '0',
+    # '-map', '0:a',
+    # '-map', '0:s',
     
     '-vf', 'scale=1920:-1',
     '-c:v', 'h264_nvenc',
