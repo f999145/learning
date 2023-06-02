@@ -29,8 +29,8 @@ video = file_list[number]
 print(f'\nvideo file:\n\t{video.name}')
 
 name = video.name.replace(video.suffix, '')
-symbols = ' abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюя0123456789'
-name = ''.join(filter(lambda x: x if x.lower() in symbols else '', name))
+symbols = ' .abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюя0123456789'
+name = ''.join(filter(lambda x: x if x.lower() in symbols else '', name)).replace('.', ' ')
 
 out_name = shorten(name, 40, placeholder='').replace(' ', '_') + '_out' + '.mp4'
 out_file = path_to_folder.joinpath(out_name)
@@ -54,13 +54,16 @@ args = [
     '-preset', 'fast',
     '-profile:v', 'main',
     '-level', '4.2',
-    '-cbr', 'False',
-    '-b:v', '6M',
+    # '-cbr', 'true',
+    '-b:v', '8M',
     
-    '-c:a', 'ac3',
-    '-af', "pan=stereo|FL < 0.7*FC + 0.3*FLC + 0.3*FL + 0.3*BL + 0.3*SL + 0.5*LFE | FR < 0.7*FC + 0.3*FRC + 0.3*FR + 0.3*BR + 0.3*SR + 0.5*LFE",
+    '-c:a', 'aac', '-b:a', '192k',
+    # '-c:a', 'libmp3lame', '-b:a', '192k',
+    # '-c:a', 'ac3',
+    '-af', "pan=stereo|FL < 0.7*FC + 0.3*FLC + 0.3*FL + 0.3*BL + 0.3*SL + 0.5*LFE | FR < 0.7*FC + 0.3*FRC + 0.3*FR + 0.3*BR + 0.3*SR + 0.5*LFE, 'loudnorm'",
     
     '-c:s', 'mov_text',
+    
     out_file
 ]
 subprocess.run(args, shell=True, check=True)
