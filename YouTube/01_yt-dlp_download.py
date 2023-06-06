@@ -5,11 +5,11 @@ import subprocess
 
 link = '''
 
-https://www.youtube.com/watch?v=_-fvdv7j6AQ
+https://youtu.be/c2eEcJfZ7jo
 
 '''.strip()
 
-resolution="2160"
+resolution="1080"
 
 path = os.path.join('a:\\', 'youtube')
 
@@ -30,7 +30,7 @@ else:
 
 ytdlp_args = [
     'yt-dlp', '-f',
-    f'bv[height<={resolution}]+ba/b[height<={resolution}]',
+    f'bv[height<={resolution}]+ba]',
     link,
     # '-P', path
     '-o', os.path.join(path, f'{name}.%(ext)s')
