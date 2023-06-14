@@ -55,9 +55,10 @@ args = [
     '-profile:v', 'main',
     '-level', '4.2',
     # '-cbr', 'true',
-    '-b:v', '8M',
+    # '-b:v', '4M',
+    '-crf', '18',
     
-    '-af', "pan=stereo|FL < 0.7*FC + 0.3*FLC + 0.3*FL + 0.3*BL + 0.3*SL + 0.5*LFE | FR < 0.7*FC + 0.3*FRC + 0.3*FR + 0.3*BR + 0.3*SR + 0.5*LFE", #'loudnorm'
+    '-af', "pan=stereo|FL < 0.7*FC + 0.3*FLC + 0.3*FL + 0.3*BL + 0.3*SL + 0.5*LFE | FR < 0.7*FC + 0.3*FRC + 0.3*FR + 0.3*BR + 0.3*SR + 0.5*LFE, loudnorm"
     '-ar', '48000',
     '-c:a', 'aac', '-b:a', '192k',
     # '-c:a', 'libmp3lame', '-b:a', '192k',

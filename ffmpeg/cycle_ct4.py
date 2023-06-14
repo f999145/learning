@@ -8,7 +8,7 @@ out_dir = Path.joinpath(path_to_folder, 'out')
 out_dir.mkdir(exist_ok=True)
 file_list = list(path_to_folder.iterdir())
 
-videosuffix = ['.mkv', '.mp4']
+videosuffix = ['.mkv', '.mp4', '.webm']
 new_file_list: list[Path] = []
 
 for index, item in enumerate(file_list):
@@ -42,7 +42,7 @@ for video in new_file_list:
         '-profile:v', 'main',
         '-level', '4.2',
         # '-cbr', 'true',
-        '-b:v', '6M',
+        '-b:v', '4M',
         
         '-af', "pan=stereo|FL < 0.7*FC + 0.3*FLC + 0.3*FL + 0.3*BL + 0.3*SL + 0.5*LFE | FR < 0.7*FC + 0.3*FRC + 0.3*FR + 0.3*BR + 0.3*SR + 0.5*LFE, loudnorm",
         '-ar', '48000',
